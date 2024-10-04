@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        // JavaScript to submit the form when an image is clicked
+        function submitForm(choice) {
+            document.getElementById(choice).checked = true; // Set the corresponding radio button as checked
+            document.getElementById("game-form").submit(); // Submit the form
+        }
+    </script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Welcome to My Rock Paper Scissors 😁</h1>
+        <form action="/play" method="POST" id="game-form">
+            <label for="choice">Make your move:</label>
+            <div class="choices">
+                <input type="radio" name="choice" value="rock" id="rock">
+                <label for="rock">
+                    <!-- Call JavaScript function when image is clicked -->
+                    <img src="{{ url_for('static', filename='rock.png') }}" alt="Rock" width="200px" onclick="submitForm('rock')">
+                </label>
+                <input type="radio" name="choice" value="paper" id="paper">
+                <label for="paper">
+                    <img src="{{ url_for('static', filename='paper.png.webp') }}" alt="Paper" width="200px" onclick="submitForm('paper')">
+                </label>
+                <input type="radio" name="choice" value="scissors" id="scissors">
+                <label for="scissors">
+                    <img src="{{ url_for('static', filename='scissor.png') }}" alt="Scissors" width="200px" onclick="submitForm('scissors')">
+                </label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
