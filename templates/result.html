@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>{{ result }}</h1>
+        <div class="result-display">
+            <div class="choice">
+                <h2>Your Choice</h2>
+                <img src="{{ user_image }}" alt="{{ user_choice }}">
+                <p>{{ user_choice }}</p>
+            </div>
+            <div class="choice">
+                <h2>Computer's Choice</h2>
+                <img src="{{ computer_image }}" alt="{{ computer_choice }}">
+                <p>{{ computer_choice }}</p>
+            </div>
+        </div>
+        <a href="/" class="play-again-button">Play Again</a>
+    </div>
+</body>
+</html>
